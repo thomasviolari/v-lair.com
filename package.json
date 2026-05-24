@@ -1,15 +1,20 @@
 {
-  "name": "v-lair",
+  "name": "devhub",
   "private": true,
-  "workspaces": ["apps/*", "packages/*"],
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "turbo dev",
-    "build": "turbo build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1"
   },
   "devDependencies": {
-    "turbo": "latest"
-  },
-  "packageManager": "pnpm@8.15.6",
-    "pnpm": {
-    "onlyBuiltDependencies": ["esbuild"]
-  }}
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.1"
+  }
+}
