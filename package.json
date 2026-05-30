@@ -4,10 +4,8 @@
   "packageManager": "npm@10.0.0",
   "workspaces": ["apps/*", "packages/*"],
   "scripts": {
-    "dev": "turbo dev",
-    "build": "turbo build"
+    "dev": "npm run dev --workspace=apps/web & npm run dev --workspace=apps/api",
+    "build": "npm run build --workspace=apps/web"
   },
-  "devDependencies": {
-    "turbo": "false"
-  }
+  "devDependencies": {}
 }
