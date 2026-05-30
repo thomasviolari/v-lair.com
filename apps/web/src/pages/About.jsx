@@ -1,14 +1,14 @@
 import './About.css'
 
 const SOCIALS = [
-  { label: 'GitHub',   icon: '⌥', href: 'https://github.com/yourusername' },
+  { label: 'GitHub',   icon: '⌥', href: 'https://github.com/thomasviolari' },
   { label: 'LinkedIn', icon: '⬡', href: 'https://linkedin.com/in/yourusername' },
-  { label: 'Email',    icon: '✉', href: 'mailto:you@example.com' },
+  { label: 'Email',    icon: '✉', href: 'mailto:thomasviolari@gmail.com' },
 ]
 
 const SKILLS = [
   { group: 'Frontend', items: ['React', 'Vite', 'TypeScript', 'CSS'] },
-  { group: 'Backend',  items: ['Node.js', 'Express', 'REST', 'GraphQL'] },
+  { group: 'Backend',  items: ['Node.js', 'Express', 'REST', 'PostgreSQl'] },
   { group: 'Infra',    items: ['Docker', 'Nginx', 'Vercel', 'Microservices'] },
 ]
 
@@ -23,7 +23,7 @@ export default function About() {
             <span>YN</span>
           </div>
           <div className="bio__text">
-            <h1 className="bio__name">Your Name</h1>
+            <h1 className="bio__name">Thomas Violari</h1>
             <p className="bio__role">Full Stack Developer · Cyprus 🌊</p>
             <p className="bio__description">
               I build full-stack products with a focus on clean architecture and great UX.
@@ -37,8 +37,14 @@ export default function About() {
                   {label}
                 </a>
               ))}
+                {/* CV button — separate, slightly elevated */}
+  <a href="/Thomas Violari CV.pdf" download className="cv-download-btn">
+    <span>↓</span>
+    Download CV
+  </a>
+</div>
             </div>
-          </div>
+          {/* </div> */}
         </section>
 
         {/* ── Divider ── */}

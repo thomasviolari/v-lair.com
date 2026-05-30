@@ -1,4 +1,4 @@
-# DevHub 🚀
+# v-lair 🚀
 
 Personal developer hub — Apple-inspired, dark/light toggle, modular mini apps.
 

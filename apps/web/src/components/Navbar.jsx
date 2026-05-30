@@ -26,7 +26,7 @@ export default function Navbar({ theme, onToggleTheme }) {
       <div className="navbar__inner container">
         <Link to="/" className="navbar__logo">
           <span className="navbar__logo-mark">⬡</span>
-          <span className="navbar__logo-text">DevHub</span>
+          <span className="navbar__logo-text">V-Lair</span>
         </Link>
 
         <div className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
