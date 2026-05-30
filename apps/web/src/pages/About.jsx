@@ -1,49 +1,62 @@
-import './About.css'
+import "./About.css";
 
 const SOCIALS = [
-  { label: 'GitHub',   icon: '⌥', href: 'https://github.com/thomasviolari' },
-  { label: 'LinkedIn', icon: '⬡', href: 'https://linkedin.com/in/yourusername' },
-  { label: 'Email',    icon: '✉', href: 'mailto:thomasviolari@gmail.com' },
-]
+  { label: "GitHub", icon: "⌥", href: "https://github.com/thomasviolari" },
+  {
+    label: "LinkedIn",
+    icon: "⬡",
+    href: "https://linkedin.com/in/yourusername",
+  },
+  { label: "Email", icon: "✉", href: "mailto:thomasviolari@gmail.com" },
+];
 
 const SKILLS = [
-  { group: 'Frontend', items: ['React', 'Vite', 'TypeScript', 'CSS'] },
-  { group: 'Backend',  items: ['Node.js', 'Express', 'REST', 'PostgreSQl'] },
-  { group: 'Infra',    items: ['Docker', 'Nginx', 'Vercel', 'Microservices'] },
-]
+  { group: "Frontend", items: ["React", "Vite", "TypeScript", "CSS"] },
+  { group: "Backend", items: ["Node.js", "Express", "REST", "PostgreSQl"] },
+  { group: "Infra", items: ["Docker", "Nginx", "Vercel", "Microservices"] },
+];
 
 export default function About() {
   return (
     <main className="about-page">
       <div className="container">
-
         {/* ── Bio ── */}
         <section className="bio animate-fadeUp">
           <div className="bio__avatar">
-            <span>YN</span>
+            <span>TV</span>
           </div>
           <div className="bio__text">
             <h1 className="bio__name">Thomas Violari</h1>
             <p className="bio__role">Full Stack Developer · Cyprus 🌊</p>
             <p className="bio__description">
-              I build full-stack products with a focus on clean architecture and great UX.
-              Currently experimenting with microservices, Vite, and turning ideas into
-              small useful tools. This is my personal lab.
+              I build full-stack products with a focus on clean architecture and
+              great UX. Currently experimenting with microservices, Vite, and
+              turning ideas into small useful tools. This is my personal lab.
             </p>
             <div className="bio__socials">
               {SOCIALS.map(({ label, icon, href }) => (
-                <a key={label} href={href} target="_blank" rel="noreferrer" className="social-link">
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="social-link"
+                >
                   <span>{icon}</span>
                   {label}
                 </a>
               ))}
-                {/* CV button — separate, slightly elevated */}
-  <a href="/Thomas Violari CV.pdf" download className="cv-download-btn">
-    <span>↓</span>
-    Download CV
-  </a>
-</div>
+              {/* CV button — separate, slightly elevated */}
+              <a
+                href="/Thomas Violari CV.pdf"
+                download
+                className="cv-download-btn"
+              >
+                <span>↓</span>
+                Download CV
+              </a>
             </div>
+          </div>
           {/* </div> */}
         </section>
 
@@ -58,8 +71,10 @@ export default function About() {
               <div key={group} className="skill-group">
                 <h3 className="skill-group__label">{group}</h3>
                 <div className="skill-group__pills">
-                  {items.map(s => (
-                    <span key={s} className="skill-pill">{s}</span>
+                  {items.map((s) => (
+                    <span key={s} className="skill-pill">
+                      {s}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -75,9 +90,9 @@ export default function About() {
           <h2 className="section-title">Currently</h2>
           <ul className="currently__list">
             {[
-              'Learning Vite & modern build tooling',
-              'Building micro-apps to ship and learn fast',
-              'Exploring microservice patterns with Express',
+              "Learning Vite & modern build tooling",
+              "Building micro-apps to ship and learn fast",
+              "Exploring microservice patterns with Express",
             ].map((item, i) => (
               <li key={i} className="currently__item">
                 <span className="currently__dot" />
@@ -86,8 +101,7 @@ export default function About() {
             ))}
           </ul>
         </section>
-
       </div>
     </main>
-  )
+  );
 }
