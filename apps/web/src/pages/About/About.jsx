@@ -2,23 +2,18 @@ import "./About.css";
 
 const SOCIALS = [
   { label: "GitHub", icon: "⌥", href: "https://github.com/thomasviolari" },
-  {
-    label: "LinkedIn",
-    icon: "⬡",
-    href: "https://linkedin.com/in/yourusername",
-  },
   { label: "Email", icon: "✉", href: "mailto:thomasviolari@gmail.com" },
 ];
 
 const PRINCIPLES = [
   {
-    group: "Start with the friction",
-    items: ["Observe", "Question", "Simplify"],
+    group: "Start with the real need",
+    items: ["Listen", "Clarify", "Prioritise"],
   },
-  { group: "Make it feel obvious", items: ["Clarity", "Care", "Momentum"] },
+  { group: "Design for use", items: ["Simple", "Reliable", "Useful"] },
   {
-    group: "Ship, then listen",
-    items: ["Small bets", "Feedback", "Iteration"],
+    group: "Deliver with structure",
+    items: ["Plan", "Track", "Improve"],
   },
 ];
 
@@ -32,14 +27,22 @@ export default function About() {
             <span>VL</span>
           </div>
           <div className="bio__text">
-            <h1 className="bio__name">V-Lair is a product studio.</h1>
+            <h1 className="bio__name">
+              V-Lair helps teams turn ideas into delivery.
+            </h1>
             <p className="bio__role">
               Technology & project management partner · Cyprus
             </p>
             <p className="bio__description">
-              We build focused digital products for teams and organisations
-              working on important problems. V-Lair is small by design: close to
-              the problem, easy to work with, and fast enough to keep learning.
+              We work with founders, teams, and organisations that need a clear
+              technical partner and a dependable delivery process. That usually
+              means product thinking, systems design, prototype work, and the
+              practical project management needed to keep everything moving.
+            </p>
+            <p className="bio__description bio__description--secondary">
+              V-Lair is intentionally small, which means we stay close to the
+              problem, move quickly, and keep the work grounded in business
+              reality rather than buzzwords.
             </p>
             <div className="bio__socials">
               {SOCIALS.map(({ label, icon, href }) => (
@@ -56,7 +59,12 @@ export default function About() {
               ))}
             </div>
           </div>
-          {/* </div> */}
+          <div className="bio__image">
+            <img
+              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=82"
+              alt="A team collaborating in a bright workspace"
+            />
+          </div>
         </section>
 
         {/* ── Divider ── */}
@@ -88,45 +96,53 @@ export default function About() {
           <div>
             <p className="skill-group__label">European project readiness</p>
             <h2 className="section-title">
-              A practical partner for the work between the idea and the impact.
+              A practical partner for the work between a good idea and a real
+              outcome.
             </h2>
           </div>
           <div className="europe-section__copy">
             <p>
-              We are interested in joining focused consortia where a startup can
-              own a meaningful technical contribution, coordinate delivery, and
-              help move the project from concept to a working pilot.
+              We support early-stage and growth-stage initiatives where a clear
+              technical contribution and disciplined project management matter
+              as much as the product itself. We are comfortable in discovery,
+              prototyping, pilots, and structured delivery work.
             </p>
             <ul>
               <li>
-                Based in Cyprus and available for cross-border collaboration
+                Based in Cyprus with a practical understanding of cross-border
+                collaboration
               </li>
               <li>
-                Comfortable with discovery, prototyping, pilots, and product
-                delivery
+                Product strategy, technical direction, and hands-on execution
               </li>
               <li>
-                Project planning, work-package coordination, reporting, and risk
-                tracking
+                Planning, work-package coordination, risk tracking, and
+                reporting
               </li>
               <li>
-                Focused on clear communication, documentation, and knowledge
-                transfer
+                Clear communication, documentation, and knowledge transfer
               </li>
             </ul>
           </div>
         </section>
 
+        <div className="about-image-band animate-fadeUp delay-3">
+          <img
+            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=82"
+            alt="A calm, modern workspace"
+          />
+        </div>
+
         <div className="section-divider" />
 
         {/* ── Currently ── */}
         <section className="currently animate-fadeUp delay-3">
-          <h2 className="section-title">Right now</h2>
+          <h2 className="section-title">How we work</h2>
           <ul className="currently__list">
             {[
-              "Shipping Relay for relationship-driven teams",
-              "Listening to the people who use our products",
-              "Looking for the next piece of workflow friction to remove",
+              "Helping teams clarify what matters before building too much",
+              "Turning ideas into practical product decisions and working prototypes",
+              "Keeping delivery structured, transparent, and honest about trade-offs",
             ].map((item, i) => (
               <li key={i} className="currently__item">
                 <span className="currently__dot" />
@@ -134,6 +150,37 @@ export default function About() {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section
+          id="contact"
+          className="contact-section animate-fadeUp delay-4"
+        >
+          <div className="contact-section__header">
+            <p className="skill-group__label">Contact</p>
+            <h2 className="section-title">Let’s talk about the next step.</h2>
+          </div>
+
+          <div className="contact-card">
+            <div className="contact-card__copy">
+              <p>
+                If you are building something early, trying to improve an
+                existing product, or looking for a technical partner that can
+                help keep the work organised, we should talk.
+              </p>
+              <p>
+                Tell us what you are building, what is unclear, and where you
+                need support.
+              </p>
+            </div>
+
+            <div className="contact-card__actions">
+              <a href="/contact">Send a project enquiry</a>
+              <a href="mailto:thomasviolari@gmail.com?subject=Project%20enquiry">
+                Email directly
+              </a>
+            </div>
+          </div>
         </section>
       </div>
     </main>

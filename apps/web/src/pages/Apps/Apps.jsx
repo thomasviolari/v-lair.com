@@ -43,15 +43,23 @@ export default function Apps() {
   return (
     <main className="apps-page">
       <div className="container">
-        <header className="page-header animate-fadeUp">
-          <p className="page-header__eyebrow">Capabilities & products</p>
-          <h1 className="page-header__title">
-            Technology that moves projects forward.
-          </h1>
-          <p className="page-header__subtitle">
-            From working prototypes to useful products, we help ambitious teams
-            turn complex ideas into something people can use.
-          </p>
+        <header className="apps-intro animate-fadeUp">
+          <div className="apps-intro__copy">
+            <p className="page-header__eyebrow">Capabilities & products</p>
+            <h1 className="page-header__title">
+              Technology that moves projects forward.
+            </h1>
+            <p className="page-header__subtitle">
+              From working prototypes to useful products, we help ambitious
+              teams turn complex ideas into something people can use.
+            </p>
+          </div>
+          <div className="apps-intro__image">
+            <img
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=82"
+              alt="A team planning work around a table"
+            />
+          </div>
         </header>
 
         <div className="apps-grid">
@@ -78,6 +86,18 @@ function AppCard({ app, index }) {
     <div
       className={`app-card animate-fadeUp ${delay} ${!app.ready ? "app-card--soon" : ""}`}
     >
+      <div className="app-card__image">
+        <img
+          src={
+            app.id === "contact"
+              ? "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=78"
+              : app.id === "placeholder-2"
+                ? "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=78"
+                : "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=78"
+          }
+          alt=""
+        />
+      </div>
       <div className="app-card__icon-wrap" style={{ "--app-color": app.color }}>
         <span className="app-card__icon">{app.icon}</span>
       </div>

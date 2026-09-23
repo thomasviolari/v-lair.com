@@ -36,7 +36,7 @@ export default function Home() {
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </Link>
-              <Link to="/apps/contacts" className="btn btn--ghost">
+              <Link to="/contact" className="btn btn--ghost">
                 Discuss a project
               </Link>
             </div>
@@ -58,6 +58,12 @@ export default function Home() {
               <br />
               from brief to impact.
             </p>
+            <div className="hero__signal-image">
+              <img
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=82"
+                alt="A team reviewing project work together"
+              />
+            </div>
             <div className="hero__signal-lines">
               <div>
                 <span>Strategy & planning</span>
@@ -117,6 +123,27 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="home-story container animate-fadeUp delay-5">
+        <div className="home-story__image">
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=82"
+            alt="People collaborating around a table"
+          />
+        </div>
+        <div className="home-story__copy">
+          <p className="section-intro__eyebrow">The way we work</p>
+          <h2>Good delivery is a team sport.</h2>
+          <p>
+            The best work happens when the people, priorities, and technology
+            are moving in the same direction. We bring structure to that
+            conversation and help turn it into something people can use.
+          </p>
+          <Link to="/about" className="home-story__link">
+            More about V-Lair <span>↗</span>
+          </Link>
+        </div>
+      </section>
+
       <section className="features container animate-fadeUp delay-5">
         <div className="section-intro">
           <p className="section-intro__eyebrow">Our approach</p>
@@ -156,7 +183,7 @@ export default function Home() {
       <section className="home-note container animate-fadeUp delay-6">
         <span className="home-note__mark">↗</span>
         <p>Looking for a startup partner for a European innovation project?</p>
-        <Link to="/apps/contacts">
+        <Link to="/contact">
           Start a conversation <span>→</span>
         </Link>
       </section>

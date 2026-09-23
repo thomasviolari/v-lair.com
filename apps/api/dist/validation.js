@@ -40,6 +40,26 @@ export function readEmailInput(body) {
     }
     return { value: { to, subject, message } };
 }
+export function readPublicContactInput(body) {
+    if (!body || typeof body !== 'object' || Array.isArray(body)) {
+        return { error: 'Request body must be an object' };
+    }
+    const input = body;
+    const name = readString(input.name, 120);
+    const email = readString(input.email, 320);
+    const company = readOptionalString(input.company, 160);
+    const message = readString(input.message, 10000);
+    const website = input.website;
+    if (website)
+        return { error: 'Unable to submit this message' };
+    if (!name || !email || !message) {
+        return { error: 'Name, email, and message are required' };
+    }
+    if (!EMAIL_PATTERN.test(email)) {
+        return { error: 'A valid email address is required' };
+    }
+    return { value: { name, email, company, message } };
+}
 export function escapeHtml(value) {
     return value.replace(/[&<>'"]/g, (character) => ({
         '&': '&amp;',

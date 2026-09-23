@@ -22,7 +22,7 @@ app.use('/api/contacts', requireApiAccess, contactsRouter);
 app.listen(PORT, () => {
     console.log(`API running on http://localhost:${PORT}`);
 });
-app.use('/api/email', requireApiAccess, emailRouter);
+app.use('/api/email', emailRouter);
 app.use((error, _req, res, _next) => {
     console.error('Unhandled API error:', error);
     res.status(500).json({ error: 'Internal server error' });

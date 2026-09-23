@@ -17,8 +17,8 @@ export default function Navbar({ theme, onToggleTheme }) {
 
   const links = [
     { to: "/", label: "Home" },
-    { to: "/apps", label: "Products" },
     { to: "/about", label: "Company" },
+    { to: "/contact", label: "Contact", mobileOnly: true },
   ];
 
   return (
@@ -32,11 +32,11 @@ export default function Navbar({ theme, onToggleTheme }) {
         <div
           className={`navbar__links ${menuOpen ? "navbar__links--open" : ""}`}
         >
-          {links.map(({ to, label }) => (
+          {links.map(({ to, label, mobileOnly }) => (
             <Link
               key={to}
               to={to}
-              className={`navbar__link ${location.pathname === to ? "navbar__link--active" : ""}`}
+              className={`navbar__link ${mobileOnly ? "navbar__link--mobile-contact" : ""} ${location.pathname === to ? "navbar__link--active" : ""}`}
             >
               {label}
             </Link>
@@ -44,8 +44,8 @@ export default function Navbar({ theme, onToggleTheme }) {
         </div>
 
         <div className="navbar__actions">
-          <Link to="/apps/contacts" className="navbar__contact">
-            Talk to us <span>↗</span>
+          <Link to="/contact" className="navbar__contact">
+            Contact <span>↗</span>
           </Link>
           <button
             className="theme-toggle"

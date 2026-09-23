@@ -29,7 +29,7 @@ app.listen(PORT, () => {
   console.log(`API running on http://localhost:${PORT}`)
 })
 
-app.use('/api/email', requireApiAccess, emailRouter)
+app.use('/api/email', emailRouter)
 
 app.use((error: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   console.error('Unhandled API error:', error)

@@ -39,6 +39,12 @@ export default function ContactsPage() {
     <main className="contacts-page">
       <div className="container">
         <header className="contacts-header animate-fadeUp">
+          <div className="contacts-header__image">
+            <img
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=78"
+              alt="A team coordinating project work"
+            />
+          </div>
           <div>
             <p className="page-header__eyebrow">Relay / Product</p>
             <h1 className="page-header__title">Contact actions</h1>

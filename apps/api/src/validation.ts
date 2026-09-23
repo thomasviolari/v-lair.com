@@ -50,6 +50,29 @@ export function readEmailInput(body: unknown) {
   return { value: { to, subject, message } }
 }
 
+export function readPublicContactInput(body: unknown) {
+  if (!body || typeof body !== 'object' || Array.isArray(body)) {
+    return { error: 'Request body must be an object' as const }
+  }
+
+  const input = body as Record<string, unknown>
+  const name = readString(input.name, 120)
+  const email = readString(input.email, 320)
+  const company = readOptionalString(input.company, 160)
+  const message = readString(input.message, 10000)
+  const website = input.website
+
+  if (website) return { error: 'Unable to submit this message' as const }
+  if (!name || !email || !message) {
+    return { error: 'Name, email, and message are required' as const }
+  }
+  if (!EMAIL_PATTERN.test(email)) {
+    return { error: 'A valid email address is required' as const }
+  }
+
+  return { value: { name, email, company, message } }
+}
+
 export function escapeHtml(value: string) {
   return value.replace(/[&<>'"]/g, (character) => ({
     '&': '&amp;',
