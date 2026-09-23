@@ -16,7 +16,8 @@ const APPS = [
   {
     id: "placeholder-2",
     title: "Signal",
-    description: "A focused workspace for turning scattered customer feedback into clear next steps.",
+    description:
+      "A focused workspace for turning scattered customer feedback into clear next steps.",
     icon: "+",
     tags: ["Insights", "Coming soon"],
     color: "#e8a344",
@@ -26,7 +27,8 @@ const APPS = [
   {
     id: "placeholder-3",
     title: "Project delivery",
-    description: "Planning, coordination, reporting, and delivery support for ambitious technical projects.",
+    description:
+      "Planning, coordination, reporting, and delivery support for ambitious technical projects.",
     icon: "~",
     tags: ["Management", "Service"],
     color: "#5c9b83",
@@ -43,9 +45,12 @@ export default function Apps() {
       <div className="container">
         <header className="page-header animate-fadeUp">
           <p className="page-header__eyebrow">Capabilities & products</p>
-          <h1 className="page-header__title">Technology that moves projects forward.</h1>
+          <h1 className="page-header__title">
+            Technology that moves projects forward.
+          </h1>
           <p className="page-header__subtitle">
-            From working prototypes to useful products, we help ambitious teams turn complex ideas into something people can use.
+            From working prototypes to useful products, we help ambitious teams
+            turn complex ideas into something people can use.
           </p>
         </header>
 
@@ -89,7 +94,11 @@ function AppCard({ app, index }) {
           ))}
         </div>
         {!app.ready && (
-          <span className={app.status === "Available" ? "badge-ready" : "badge-soon"}>
+          <span
+            className={
+              app.status === "Available" ? "badge-ready" : "badge-soon"
+            }
+          >
             {app.status || "Soon"}
           </span>
         )}

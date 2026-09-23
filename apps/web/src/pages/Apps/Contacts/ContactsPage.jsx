@@ -1,40 +1,43 @@
-import { useState } from 'react'
-import { useContacts } from './hooks/useContacts'
-import ContactsWidget from './widgets/ContactsWidget'
-import ComposeWidget from './widgets/ComposeWidget'
-import TemplatesWidget from './widgets/TemplatesWidget'
-import ContactModal from './components/ContactModal'
-import './contacts.css'
+import { useState } from "react";
+import { useContacts } from "./hooks/useContacts";
+import ContactsWidget from "./widgets/ContactsWidget";
+import ComposeWidget from "./widgets/ComposeWidget";
+import TemplatesWidget from "./widgets/TemplatesWidget";
+import ContactModal from "./components/ContactModal";
+import "./contacts.css";
 
 export default function ContactsPage() {
   const {
-    contacts, loading,
-    search, setSearch,
-    createContact, updateContact, deleteContact
-  } = useContacts()
+    contacts,
+    loading,
+    search,
+    setSearch,
+    createContact,
+    updateContact,
+    deleteContact,
+  } = useContacts();
 
-  const [selectedContact, setSelectedContact] = useState(null)
-  const [modal, setModal] = useState(null)
-  const [composeData, setComposeData] = useState(null)
+  const [selectedContact, setSelectedContact] = useState(null);
+  const [modal, setModal] = useState(null);
+  const [composeData, setComposeData] = useState(null);
 
   const handlePersonalEmail = (contact) => {
-    setSelectedContact(contact)
-    setComposeData({ to: contact.email, subject: '', body: '' })
-  }
+    setSelectedContact(contact);
+    setComposeData({ to: contact.email, subject: "", body: "" });
+  };
 
   const handleTemplateEmail = (contact, template) => {
-    setSelectedContact(contact)
+    setSelectedContact(contact);
     setComposeData({
       to: contact.email,
       subject: template.subject,
-      body: template.body.replace(/{{name}}/g, contact.firstName)
-    })
-  }
+      body: template.body.replace(/{{name}}/g, contact.firstName),
+    });
+  };
 
   return (
     <main className="contacts-page">
       <div className="container">
-
         <header className="contacts-header animate-fadeUp">
           <div>
             <p className="page-header__eyebrow">Relay / Product</p>
@@ -43,7 +46,6 @@ export default function ContactsPage() {
         </header>
 
         <div className="workspace animate-fadeUp delay-1">
-
           {/* Titlebar */}
           <div className="workspace__bar">
             <div className="workspace__title">
@@ -64,7 +66,7 @@ export default function ContactsPage() {
               loading={loading}
               search={search}
               onSearch={setSearch}
-              onAdd={() => setModal('add')}
+              onAdd={() => setModal("add")}
               onEdit={(c) => setModal(c)}
               onDelete={deleteContact}
               onPersonalEmail={handlePersonalEmail}
@@ -81,20 +83,19 @@ export default function ContactsPage() {
               onUseTemplate={handleTemplateEmail}
             />
           </div>
-
         </div>
       </div>
 
       {modal && (
         <ContactModal
-          contact={modal === 'add' ? null : modal}
+          contact={modal === "add" ? null : modal}
           onSave={async (form) => {
-            if (modal === 'add') await createContact(form)
-            else await updateContact(modal.id, form)
+            if (modal === "add") await createContact(form);
+            else await updateContact(modal.id, form);
           }}
           onClose={() => setModal(null)}
         />
       )}
     </main>
-  )
+  );
 }

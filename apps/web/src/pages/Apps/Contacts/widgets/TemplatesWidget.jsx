@@ -1,69 +1,73 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-const API = `${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/api/email`
+const API = `${import.meta.env.VITE_API_URL || "http://localhost:3001"}/api/email`;
 
 const DEFAULT_TEMPLATES = [
   {
-    id: '1',
-    name: 'Follow-up',
-    type: 'personal',
-    subject: 'Following up',
-    body: 'Hi {{name}},\n\nJust wanted to follow up on our last conversation. Let me know if you have any questions!\n\nBest regards'
+    id: "1",
+    name: "Follow-up",
+    type: "personal",
+    subject: "Following up",
+    body: "Hi {{name}},\n\nJust wanted to follow up on our last conversation. Let me know if you have any questions!\n\nBest regards",
   },
   {
-    id: '2',
-    name: 'Introduction',
-    type: 'mass',
-    subject: 'Nice to meet you',
-    body: 'Dear {{name}},\n\nI\'d like to introduce myself. I\'m reaching out because...\n\nLooking forward to connecting!'
+    id: "2",
+    name: "Introduction",
+    type: "mass",
+    subject: "Nice to meet you",
+    body: "Dear {{name}},\n\nI'd like to introduce myself. I'm reaching out because...\n\nLooking forward to connecting!",
   },
   {
-    id: '3',
-    name: 'Thank you',
-    type: 'personal',
-    subject: 'Thank you!',
-    body: 'Hi {{name}},\n\nThank you so much for taking the time. It was a pleasure!\n\nBest regards'
+    id: "3",
+    name: "Thank you",
+    type: "personal",
+    subject: "Thank you!",
+    body: "Hi {{name}},\n\nThank you so much for taking the time. It was a pleasure!\n\nBest regards",
   },
-]
+];
 
-export default function TemplatesWidget({ contacts, selectedContact, onUseTemplate }) {
-  const [templates, setTemplates] = useState(DEFAULT_TEMPLATES)
-  const [selected, setSelected] = useState(null)
-  const [sending, setSending] = useState(false)
-  const [sent, setSent] = useState(false)
+export default function TemplatesWidget({
+  contacts,
+  selectedContact,
+  onUseTemplate,
+}) {
+  const [templates, setTemplates] = useState(DEFAULT_TEMPLATES);
+  const [selected, setSelected] = useState(null);
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
 
   const handleUse = (template) => {
-    setSelected(template)
+    setSelected(template);
     if (selectedContact) {
-      onUseTemplate(selectedContact, template)
+      onUseTemplate(selectedContact, template);
     }
-  }
+  };
 
   const handleSendAll = async () => {
-    if (!selected) return
-    setSending(true)
+    if (!selected) return;
+    setSending(true);
     try {
       await Promise.all(
-        contacts.map(contact =>
+        contacts.map((contact) =>
           fetch(`${API}/send`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               to: contact.email,
               subject: selected.subject,
-              body: selected.body.replace(/{{name}}/g, contact.firstName)
-            })
-          })
-        )
-      )
-      setSent(true)
-      setTimeout(() => setSent(false), 3000)
+              body: selected.body.replace(/{{name}}/g, contact.firstName),
+            }),
+          }),
+        ),
+      );
+      setSent(true);
+      setTimeout(() => setSent(false), 3000);
     } catch (e) {
-      console.error(e)
+      console.error(e);
     } finally {
-      setSending(false)
+      setSending(false);
     }
-  }
+  };
 
   return (
     <div className="widget">
@@ -73,19 +77,23 @@ export default function TemplatesWidget({ contacts, selectedContact, onUseTempla
       </div>
 
       <div className="widget__scroll">
-        {templates.map(template => (
+        {templates.map((template) => (
           <div
             key={template.id}
-            className={`template-card ${selected?.id === template.id ? 'template-card--selected' : ''}`}
+            className={`template-card ${selected?.id === template.id ? "template-card--selected" : ""}`}
             onClick={() => handleUse(template)}
           >
             <div className="template-card__header">
               <span className="template-card__name">{template.name}</span>
-              <span className={`template-badge template-badge--${template.type}`}>
-                {template.type === 'mass' ? 'Mass' : 'Personal'}
+              <span
+                className={`template-badge template-badge--${template.type}`}
+              >
+                {template.type === "mass" ? "Mass" : "Personal"}
               </span>
             </div>
-            <p className="template-card__preview">{template.body.replace(/{{name}}/g, '…')}</p>
+            <p className="template-card__preview">
+              {template.body.replace(/{{name}}/g, "…")}
+            </p>
           </div>
         ))}
       </div>
@@ -96,16 +104,20 @@ export default function TemplatesWidget({ contacts, selectedContact, onUseTempla
         <p className="sendall__label">
           {selected
             ? `Send "${selected.name}" to all ${contacts.length} contacts`
-            : 'Select a template to send to all'}
+            : "Select a template to send to all"}
         </p>
         <button
-          className={`send-btn ${sent ? 'send-btn--sent' : ''}`}
+          className={`send-btn ${sent ? "send-btn--sent" : ""}`}
           onClick={handleSendAll}
           disabled={!selected || sending || contacts.length === 0}
         >
-          {sent ? '✓ Sent!' : sending ? 'Sending...' : `✉ Send to all (${contacts.length})`}
+          {sent
+            ? "✓ Sent!"
+            : sending
+              ? "Sending..."
+              : `✉ Send to all (${contacts.length})`}
         </button>
       </div>
     </div>
-  )
+  );
 }
