@@ -17,7 +17,8 @@ export default function Navbar({ theme, onToggleTheme }) {
 
   const links = [
     { to: "/", label: "Home" },
-    { to: "/about", label: "Company" },
+    { to: "/apps", label: "Capabilities" },
+    { to: "/about", label: "About us" },
     { to: "/contact", label: "Contact", mobileOnly: true },
   ];
 
@@ -44,8 +45,27 @@ export default function Navbar({ theme, onToggleTheme }) {
         </div>
 
         <div className="navbar__actions">
-          <Link to="/contact" className="navbar__contact">
-            Contact <span>↗</span>
+          <Link
+            to="/contact"
+            className="navbar__contact"
+            aria-label="Contact V-Lair"
+            title="Contact V-Lair"
+          >
+            <svg
+              className="navbar__contact-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              aria-hidden="true"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m3 7 9 6 9-6" />
+            </svg>
+            <span className="navbar__contact-label">Contact</span>
+            <span className="navbar__contact-arrow" aria-hidden="true">↗</span>
           </Link>
           <button
             className="theme-toggle"

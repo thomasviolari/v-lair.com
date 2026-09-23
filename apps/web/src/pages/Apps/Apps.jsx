@@ -1,47 +1,84 @@
 import { Link } from "react-router-dom";
 import "./Apps.css";
 
-const APPS = [
+const OFFERINGS = [
   {
-    id: "contact",
+    id: "products",
+    category: "Products",
     title: "Relay",
     description:
-      "A calmer way to manage relationships, follow-ups, and the conversations that keep work moving.",
+      "Our relationship workspace for keeping follow-ups, contacts, and important conversations moving in one place.",
     icon: "↗",
-    tags: ["Communication", "Live"],
+    tags: ["Communication", "Product direction"],
     color: "#ef6a4f",
-    ready: true,
-    path: "/apps/contacts",
+    image:
+      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=78",
   },
   {
-    id: "placeholder-2",
-    title: "Signal",
+    id: "solutions",
+    category: "Solutions",
+    title: "Digital products",
     description:
-      "A focused workspace for turning scattered customer feedback into clear next steps.",
-    icon: "+",
-    tags: ["Insights", "Coming soon"],
+      "Web platforms, workflow tools, and user experiences shaped around the people who will use them.",
+    icon: "＋",
+    tags: ["Web platforms", "Tailored delivery"],
     color: "#e8a344",
-    ready: false,
-    path: "/apps/placeholder-2",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=78",
   },
   {
-    id: "placeholder-3",
-    title: "Project delivery",
+    id: "delivery",
+    category: "Project management",
+    title: "Public-sector & European delivery",
     description:
-      "Planning, coordination, reporting, and delivery support for ambitious technical projects.",
-    icon: "~",
-    tags: ["Management", "Service"],
+      "Planning, work-package coordination, partner communication, reporting, risk tracking, and delivery follow-through.",
+    icon: "▦",
+    tags: ["Public sector", "European projects"],
     color: "#5c9b83",
-    ready: false,
-    status: "Available",
-    path: "/apps/placeholder-3",
+    image:
+      "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=78",
+  },
+  {
+    id: "prototyping",
+    category: "Software delivery",
+    title: "Prototypes & MVPs",
+    description:
+      "Fast, focused prototypes that make an idea tangible, test assumptions, and give your team something real to discuss.",
+    icon: "◇",
+    tags: ["Rapid validation", "Working software"],
+    color: "#d47752",
+    image:
+      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=900&q=78",
+  },
+  {
+    id: "data",
+    category: "Software delivery",
+    title: "Data & AI applications",
+    description:
+      "Responsible tools that turn operational data into clear information, better decisions, and useful everyday workflows.",
+    icon: "✦",
+    tags: ["Data products", "AI interfaces"],
+    color: "#6c8f86",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=78",
+  },
+  {
+    id: "coordination",
+    category: "Project management",
+    title: "Coordination & reporting",
+    description:
+      "A steady operating rhythm for partners, milestones, risks, decisions, and reporting across a complex project.",
+    icon: "◎",
+    tags: ["Work packages", "Partner alignment"],
+    color: "#c18b4d",
+    image:
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=78",
   },
 ];
-// ────────────────────────────────────────────────────────────────────────────
 
 export default function Apps() {
   return (
-    <main className="apps-page">
+  <main className="apps-page">
       <div className="container">
         <header className="apps-intro animate-fadeUp">
           <div className="apps-intro__copy">
@@ -50,9 +87,15 @@ export default function Apps() {
               Technology that moves projects forward.
             </h1>
             <p className="page-header__subtitle">
-              From working prototypes to useful products, we help ambitious
-              teams turn complex ideas into something people can use.
+              We combine product thinking, software delivery, and project
+              management for teams doing work that needs to land in the real
+              world.
             </p>
+            <div className="apps-intro__meta">
+              <span>Based in Cyprus</span>
+              <span>Public & private sector</span>
+              <span>Small team, senior attention</span>
+            </div>
           </div>
           <div className="apps-intro__image">
             <img
@@ -63,16 +106,44 @@ export default function Apps() {
         </header>
 
         <div className="apps-grid">
-          {APPS.map((app, i) => (
+          {OFFERINGS.map((app, i) => (
             <AppCard key={app.id} app={app} index={i} />
           ))}
-
-          {/* Add new app placeholder */}
-          <div className="app-card app-card--add animate-fadeUp delay-6">
-            <span className="app-card__add-icon">+</span>
-            <p className="app-card__add-text">More products in the works</p>
-          </div>
         </div>
+
+        <section className="apps-process animate-fadeUp delay-5">
+          <div>
+            <p className="page-header__eyebrow">A sensible way to start</p>
+            <h2>Useful from the first conversation.</h2>
+          </div>
+          <div className="apps-process__steps">
+            <div>
+              <span>01</span>
+              <h3>Understand the work</h3>
+              <p>We clarify the outcome, users, constraints, and people involved.</p>
+            </div>
+            <div>
+              <span>02</span>
+              <h3>Make a practical plan</h3>
+              <p>We turn uncertainty into priorities, milestones, and visible next steps.</p>
+            </div>
+            <div>
+              <span>03</span>
+              <h3>Deliver and learn</h3>
+              <p>We build, coordinate, document, and improve with the team around us.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="apps-cta animate-fadeUp delay-6">
+          <div>
+            <p className="page-header__eyebrow">Have a project in mind?</p>
+            <h2>Let’s work out where V-Lair fits.</h2>
+          </div>
+          <Link to="/contact" className="btn btn--primary">
+            Start a conversation <span aria-hidden="true">↗</span>
+          </Link>
+        </section>
       </div>
     </main>
   );
@@ -84,24 +155,16 @@ function AppCard({ app, index }) {
 
   const inner = (
     <div
-      className={`app-card animate-fadeUp ${delay} ${!app.ready ? "app-card--soon" : ""}`}
+      className={`app-card animate-fadeUp ${delay}`}
     >
       <div className="app-card__image">
-        <img
-          src={
-            app.id === "contact"
-              ? "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=78"
-              : app.id === "placeholder-2"
-                ? "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=78"
-                : "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=78"
-          }
-          alt=""
-        />
+        <img src={app.image} alt="" />
       </div>
       <div className="app-card__icon-wrap" style={{ "--app-color": app.color }}>
         <span className="app-card__icon">{app.icon}</span>
       </div>
       <div className="app-card__body">
+        <p className="app-card__category">{app.category}</p>
         <h3 className="app-card__title">{app.title}</h3>
         <p className="app-card__desc">{app.description}</p>
       </div>
@@ -113,39 +176,9 @@ function AppCard({ app, index }) {
             </span>
           ))}
         </div>
-        {!app.ready && (
-          <span
-            className={
-              app.status === "Available" ? "badge-ready" : "badge-soon"
-            }
-          >
-            {app.status || "Soon"}
-          </span>
-        )}
-        {app.ready && (
-          <span className="badge-ready">
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-            Open
-          </span>
-        )}
       </div>
     </div>
   );
 
-  return app.ready ? (
-    <Link to={app.path} style={{ textDecoration: "none" }}>
-      {inner}
-    </Link>
-  ) : (
-    inner
-  );
+  return inner;
 }

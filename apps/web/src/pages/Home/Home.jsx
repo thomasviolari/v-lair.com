@@ -19,8 +19,8 @@ export default function Home() {
             </h1>
             <p className="hero__subtitle animate-fadeUp delay-3">
               We combine practical software delivery with hands-on project
-              management for European innovation projects, growing teams, and
-              organisations ready to work differently.
+              management for public-sector teams, European initiatives, growing
+              organisations, and ambitious projects that need to move forward.
             </p>
             <div className="hero__cta animate-fadeUp delay-4">
               <Link to="/apps" className="btn btn--primary">
@@ -78,7 +78,7 @@ export default function Home() {
                 <b>03</b>
               </div>
             </div>
-            <div className="hero__signal-foot">EUROPE / CYPRUS / REMOTE</div>
+            <div className="hero__signal-foot">PUBLIC SECTOR / EUROPE / REMOTE</div>
           </div>
         </div>
       </section>
@@ -87,13 +87,14 @@ export default function Home() {
         <div className="project-fit__intro">
           <p className="section-intro__eyebrow">Where we fit</p>
           <h2>
-            A small team for
+            A capable partner for
             <br />
             <span>important work.</span>
           </h2>
           <p>
-            As a startup, we bring speed, ownership, and a product mindset to
-            focused work packages and consortium partnerships.
+            We bring product thinking, delivery discipline, and clear
+            communication to public services, European initiatives, and
+            organisations improving the way people work.
           </p>
         </div>
         <div className="project-fit__list">
@@ -124,11 +125,20 @@ export default function Home() {
       </section>
 
       <section className="home-story container animate-fadeUp delay-5">
-        <div className="home-story__image">
-          <img
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=82"
-            alt="People collaborating around a table"
-          />
+        <div className="home-story__media">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=82"
+            aria-hidden="true"
+          >
+            <source
+              src="https://videos.pexels.com/video-files/7593578/7593578-hd_1920_1080_25fps.mp4"
+              type="video/mp4"
+            />
+          </video>
         </div>
         <div className="home-story__copy">
           <p className="section-intro__eyebrow">The way we work</p>
@@ -182,7 +192,7 @@ export default function Home() {
 
       <section className="home-note container animate-fadeUp delay-6">
         <span className="home-note__mark">↗</span>
-        <p>Looking for a startup partner for a European innovation project?</p>
+        <p>Have a public-sector, software, or project delivery challenge?</p>
         <Link to="/contact">
           Start a conversation <span>→</span>
         </Link>

@@ -7,13 +7,22 @@ const SOCIALS = [
 
 const PRINCIPLES = [
   {
-    group: "Start with the real need",
-    items: ["Listen", "Clarify", "Prioritise"],
+    group: "Understand the context",
+    description:
+      "Before proposing a solution, we learn how the work happens, who it affects, and what a useful result needs to change.",
+    items: ["Discovery", "User needs", "Constraints", "Outcomes"],
   },
-  { group: "Design for use", items: ["Simple", "Reliable", "Useful"] },
   {
-    group: "Deliver with structure",
-    items: ["Plan", "Track", "Improve"],
+    group: "Shape the right solution",
+    description:
+      "We turn the brief into a clear product direction, a sensible technical approach, and something people can understand early.",
+    items: ["Service design", "UX flows", "Prototypes", "Architecture"],
+  },
+  {
+    group: "Deliver with confidence",
+    description:
+      "We keep delivery visible and manageable with decisions, milestones, documentation, and honest communication.",
+    items: ["Planning", "Milestones", "Risk tracking", "Reporting", "Handover"],
   },
 ];
 
@@ -72,11 +81,21 @@ export default function About() {
 
         {/* ── Skills ── */}
         <section className="skills-section animate-fadeUp delay-2">
-          <h2 className="section-title">How we work</h2>
+          <div className="skills-section__intro">
+            <div>
+              <p className="skill-group__label">Our working model</p>
+              <h2 className="section-title">How we work</h2>
+            </div>
+            <p>
+              Good delivery is not a single handoff. It is a sequence of clear
+              conversations, practical decisions, and steady progress.
+            </p>
+          </div>
           <div className="skills-grid">
-            {PRINCIPLES.map(({ group, items }) => (
+            {PRINCIPLES.map(({ group, description, items }) => (
               <div key={group} className="skill-group">
                 <h3 className="skill-group__label">{group}</h3>
+                <p className="skill-group__description">{description}</p>
                 <div className="skill-group__pills">
                   {items.map((s) => (
                     <span key={s} className="skill-pill">
@@ -94,33 +113,32 @@ export default function About() {
 
         <section className="europe-section animate-fadeUp delay-3">
           <div>
-            <p className="skill-group__label">European project readiness</p>
+            <p className="skill-group__label">Public-sector & European work</p>
             <h2 className="section-title">
-              A practical partner for the work between a good idea and a real
-              outcome.
+              Clear delivery for work that affects more than one organisation.
             </h2>
           </div>
           <div className="europe-section__copy">
             <p>
-              We support early-stage and growth-stage initiatives where a clear
-              technical contribution and disciplined project management matter
-              as much as the product itself. We are comfortable in discovery,
-              prototyping, pilots, and structured delivery work.
+              We are interested in working with public-sector teams, agencies,
+              municipalities, research partners, and growing organisations that
+              need technology to become useful in practice. That includes
+              European innovation initiatives, service improvement, digital
+              platforms, and structured delivery support.
             </p>
             <ul>
               <li>
-                Based in Cyprus with a practical understanding of cross-border
-                collaboration
+                Based in Cyprus and available for cross-border collaboration
               </li>
               <li>
-                Product strategy, technical direction, and hands-on execution
+                Digital services, product strategy, and hands-on execution
               </li>
               <li>
-                Planning, work-package coordination, risk tracking, and
-                reporting
+                Project planning, coordination, risk tracking, and reporting
               </li>
               <li>
-                Clear communication, documentation, and knowledge transfer
+                Clear documentation, accessibility-minded thinking, and knowledge
+                transfer
               </li>
             </ul>
           </div>
@@ -137,12 +155,12 @@ export default function About() {
 
         {/* ── Currently ── */}
         <section className="currently animate-fadeUp delay-3">
-          <h2 className="section-title">How we work</h2>
+          <h2 className="section-title">What clients can expect</h2>
           <ul className="currently__list">
             {[
-              "Helping teams clarify what matters before building too much",
-              "Turning ideas into practical product decisions and working prototypes",
-              "Keeping delivery structured, transparent, and honest about trade-offs",
+              "A clear first step that turns a broad brief into a practical scope",
+              "Visible progress through decisions, prototypes, milestones, and regular updates",
+              "A documented handover so the work remains useful after delivery",
             ].map((item, i) => (
               <li key={i} className="currently__item">
                 <span className="currently__dot" />

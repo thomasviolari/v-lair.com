@@ -169,6 +169,25 @@
 }
 
 /* ── Skills ── */
+.skills-section__intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 42px;
+}
+
+.skills-section__intro .section-title {
+  margin: 12px 0 0;
+}
+
+.skills-section__intro > p {
+  max-width: 360px;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -185,6 +204,14 @@
   margin-bottom: 14px;
 }
 
+.skill-group__description {
+  min-height: 78px;
+  margin-bottom: 18px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
 .skill-group__pills {
   display: flex;
   flex-wrap: wrap;
@@ -194,8 +221,8 @@
 .skill-pill {
   font-size: 13px;
   font-weight: 500;
-  padding: 6px 14px;
-  border-radius: 20px;
+  padding: 8px 14px;
+  border-radius: 8px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   color: var(--text-primary);
@@ -205,6 +232,7 @@
 .skill-pill:hover {
   border-color: var(--accent);
   color: var(--accent);
+  background: var(--pill-bg);
 }
 
 /* ── Currently ── */
@@ -286,6 +314,7 @@
   .about-page { padding-top: 104px; }
   .bio { flex-direction: column; gap: 24px; }
   .bio__image { width: 100%; flex-basis: 240px; height: 240px; }
+  .skills-section__intro { align-items: flex-start; flex-direction: column; gap: 18px; }
   .skills-grid { grid-template-columns: 1fr; gap: 24px; }
   .europe-section { grid-template-columns: 1fr; gap: 20px; }
   .contact-card { grid-template-columns: 1fr; }
