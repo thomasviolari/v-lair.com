@@ -65,7 +65,9 @@ export default function Navbar({ theme, onToggleTheme }) {
               <path d="m3 7 9 6 9-6" />
             </svg>
             <span className="navbar__contact-label">Contact</span>
-            <span className="navbar__contact-arrow" aria-hidden="true">↗</span>
+            <span className="navbar__contact-arrow" aria-hidden="true">
+              ↗
+            </span>
           </Link>
           <button
             className="theme-toggle"

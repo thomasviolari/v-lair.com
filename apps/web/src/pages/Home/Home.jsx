@@ -78,7 +78,9 @@ export default function Home() {
                 <b>03</b>
               </div>
             </div>
-            <div className="hero__signal-foot">PUBLIC SECTOR / EUROPE / REMOTE</div>
+            <div className="hero__signal-foot">
+              PUBLIC SECTOR / EUROPE / REMOTE
+            </div>
           </div>
         </div>
       </section>

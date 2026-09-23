@@ -78,7 +78,7 @@ const OFFERINGS = [
 
 export default function Apps() {
   return (
-  <main className="apps-page">
+    <main className="apps-page">
       <div className="container">
         <header className="apps-intro animate-fadeUp">
           <div className="apps-intro__copy">
@@ -120,17 +120,25 @@ export default function Apps() {
             <div>
               <span>01</span>
               <h3>Understand the work</h3>
-              <p>We clarify the outcome, users, constraints, and people involved.</p>
+              <p>
+                We clarify the outcome, users, constraints, and people involved.
+              </p>
             </div>
             <div>
               <span>02</span>
               <h3>Make a practical plan</h3>
-              <p>We turn uncertainty into priorities, milestones, and visible next steps.</p>
+              <p>
+                We turn uncertainty into priorities, milestones, and visible
+                next steps.
+              </p>
             </div>
             <div>
               <span>03</span>
               <h3>Deliver and learn</h3>
-              <p>We build, coordinate, document, and improve with the team around us.</p>
+              <p>
+                We build, coordinate, document, and improve with the team around
+                us.
+              </p>
             </div>
           </div>
         </section>
@@ -154,9 +162,7 @@ function AppCard({ app, index }) {
   const delay = delays[index % delays.length];
 
   const inner = (
-    <div
-      className={`app-card animate-fadeUp ${delay}`}
-    >
+    <div className={`app-card animate-fadeUp ${delay}`}>
       <div className="app-card__image">
         <img src={app.image} alt="" />
       </div>

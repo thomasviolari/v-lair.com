@@ -137,8 +137,8 @@ export default function About() {
                 Project planning, coordination, risk tracking, and reporting
               </li>
               <li>
-                Clear documentation, accessibility-minded thinking, and knowledge
-                transfer
+                Clear documentation, accessibility-minded thinking, and
+                knowledge transfer
               </li>
             </ul>
           </div>
