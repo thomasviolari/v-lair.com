@@ -17,8 +17,8 @@ export default function Navbar({ theme, onToggleTheme }) {
 
   const links = [
     { to: '/',      label: 'Home' },
-    { to: '/apps',  label: 'Apps' },
-    { to: '/about', label: 'About' },
+    { to: '/apps',  label: 'Products' },
+    { to: '/about', label: 'Company' },
   ]
 
   return (
@@ -42,6 +42,7 @@ export default function Navbar({ theme, onToggleTheme }) {
         </div>
 
         <div className="navbar__actions">
+          <Link to="/apps/contacts" className="navbar__contact">Talk to us <span>↗</span></Link>
           <button
             className="theme-toggle"
             onClick={onToggleTheme}

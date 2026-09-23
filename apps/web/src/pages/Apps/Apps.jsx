@@ -1,39 +1,37 @@
 import { Link } from "react-router-dom";
 import "./Apps.css";
 
-// ── Add your apps here ──────────────────────────────────────────────────────
-// Each entry will appear as a card in the grid.
-// Set `ready: false` to show it as "Coming soon"
 const APPS = [
   {
     id: "contact",
-    title: "App One",
+    title: "Relay",
     description:
-      "Easily manage your contacts and communicate with personalized email templates.",
-    icon: "🚀",
-    tags: ["React", "API"],
-    color: "#0071e3",
+      "A calmer way to manage relationships, follow-ups, and the conversations that keep work moving.",
+    icon: "↗",
+    tags: ["Communication", "Live"],
+    color: "#ef6a4f",
     ready: true,
     path: "/apps/contacts",
   },
   {
     id: "placeholder-2",
-    title: "App Two",
-    description: "Another tool you are building. Keep it modular.",
-    icon: "🧩",
-    tags: ["Node.js", "Microservice"],
-    color: "#30d158",
+    title: "Signal",
+    description: "A focused workspace for turning scattered customer feedback into clear next steps.",
+    icon: "+",
+    tags: ["Insights", "Coming soon"],
+    color: "#e8a344",
     ready: false,
     path: "/apps/placeholder-2",
   },
   {
     id: "placeholder-3",
-    title: "App Three",
-    description: "Coming soon. Something creative is brewing here.",
-    icon: "✨",
-    tags: ["Experiment"],
-    color: "#bf5af2",
+    title: "Project delivery",
+    description: "Planning, coordination, reporting, and delivery support for ambitious technical projects.",
+    icon: "~",
+    tags: ["Management", "Service"],
+    color: "#5c9b83",
     ready: false,
+    status: "Available",
     path: "/apps/placeholder-3",
   },
 ];
@@ -44,10 +42,10 @@ export default function Apps() {
     <main className="apps-page">
       <div className="container">
         <header className="page-header animate-fadeUp">
-          <p className="page-header__eyebrow">Mini Apps</p>
-          <h1 className="page-header__title">The Lab</h1>
+          <p className="page-header__eyebrow">Capabilities & products</p>
+          <h1 className="page-header__title">Technology that moves projects forward.</h1>
           <p className="page-header__subtitle">
-            Small, focused tools — each solving one problem well.
+            From working prototypes to useful products, we help ambitious teams turn complex ideas into something people can use.
           </p>
         </header>
 
@@ -59,7 +57,7 @@ export default function Apps() {
           {/* Add new app placeholder */}
           <div className="app-card app-card--add animate-fadeUp delay-6">
             <span className="app-card__add-icon">+</span>
-            <p className="app-card__add-text">New app coming soon</p>
+            <p className="app-card__add-text">More products in the works</p>
           </div>
         </div>
       </div>
@@ -90,7 +88,11 @@ function AppCard({ app, index }) {
             </span>
           ))}
         </div>
-        {!app.ready && <span className="badge-soon">Soon</span>}
+        {!app.ready && (
+          <span className={app.status === "Available" ? "badge-ready" : "badge-soon"}>
+            {app.status || "Soon"}
+          </span>
+        )}
         {app.ready && (
           <span className="badge-ready">
             <svg

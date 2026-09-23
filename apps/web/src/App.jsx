@@ -18,7 +18,7 @@ export default function App() {
         <Route path="/apps" element={<Apps />} />
         <Route path="/about" element={<About />} />
         <Route path="/apps/contacts" element={<Contacts />} />
-        {/* Add new app routes here:
+        {/* Add new product routes here:
             <Route path="/apps/my-app" element={<MyApp />} />
         */}
       </Routes>

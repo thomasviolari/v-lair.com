@@ -37,8 +37,8 @@ export default function ContactsPage() {
 
         <header className="contacts-header animate-fadeUp">
           <div>
-            <p className="page-header__eyebrow">Mini App</p>
-            <h1 className="page-header__title">Contact Actions</h1>
+            <p className="page-header__eyebrow">Relay / Product</p>
+            <h1 className="page-header__title">Contact actions</h1>
           </div>
         </header>
 
@@ -47,8 +47,8 @@ export default function ContactsPage() {
           {/* Titlebar */}
           <div className="workspace__bar">
             <div className="workspace__title">
-              <span>📋</span>
-              Contact Actions
+              <span>↗</span>
+              Relay
             </div>
             <div className="workspace__dots">
               <span className="dot dot--red" />

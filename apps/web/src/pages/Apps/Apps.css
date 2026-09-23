@@ -62,7 +62,7 @@ a .app-card:hover,
 .app-card:not(.app-card--soon):not(.app-card--add):hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
-  border-color: rgba(0,113,227,0.2);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 .app-card--soon {

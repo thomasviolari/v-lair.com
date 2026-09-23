@@ -11,6 +11,8 @@
     "@v-lair/database": "*",
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^8.3.0",
     "resend": "^6.12.4"
   },
   "devDependencies": {
