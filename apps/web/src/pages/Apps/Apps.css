@@ -280,3 +280,24 @@
   .apps-process__steps { grid-template-columns: 1fr; }
   .apps-cta { margin-top: 72px; padding: 28px; }
 }
+.app-card__link {
+  position: relative;
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.app-card__explore {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 22px 20px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.app-card__link:hover .app-card__explore span { transform: translate(3px, -3px); }
+.app-card__explore span { transition: transform 0.2s ease; }

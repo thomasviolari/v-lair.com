@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
+import { apiUrl } from '../../../../lib/api.js'
 
-const API = `${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/api/contacts`
+const getApi = () => apiUrl('contacts')
 
 export function useContacts() {
   const [contacts, setContacts] = useState([])
@@ -11,7 +12,8 @@ export function useContacts() {
   const fetchContacts = useCallback(async () => {
     setLoading(true)
     try {
-      const url = search ? `${API}?search=${encodeURIComponent(search)}` : API
+      const api = getApi()
+      const url = search ? `${api}?search=${encodeURIComponent(search)}` : api
       const res = await fetch(url)
       const data = await res.json()
       setContacts(data)
@@ -28,7 +30,7 @@ export function useContacts() {
   }, [fetchContacts])
 
   const createContact = async (data) => {
-    const res = await fetch(API, {
+    const res = await fetch(getApi(), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
@@ -38,7 +40,7 @@ export function useContacts() {
   }
 
   const updateContact = async (id, data) => {
-    await fetch(`${API}/${id}`, {
+    await fetch(`${getApi()}/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
@@ -47,7 +49,7 @@ export function useContacts() {
   }
 
   const deleteContact = async (id) => {
-    await fetch(`${API}/${id}`, { method: 'DELETE' })
+    await fetch(`${getApi()}/${id}`, { method: 'DELETE' })
     await fetchContacts()
   }
 

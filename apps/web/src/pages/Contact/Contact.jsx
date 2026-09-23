@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { apiUrl } from "../../lib/api";
 import "./Contact.css";
 
-const API = `${import.meta.env.VITE_API_URL || "http://localhost:3001"}/api/email/contact`;
 const DIRECT_EMAIL = "thomasviolari@gmail.com";
 
 const initialForm = {
@@ -31,7 +31,7 @@ export default function Contact() {
     setEmailFallback(false);
 
     try {
-      const response = await fetch(API, {
+      const response = await fetch(apiUrl("email/contact"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -48,6 +48,7 @@ export default function Contact() {
       setStatus("sent");
       setForm(initialForm);
     } catch (submitError) {
+      if (submitError.message.includes("not configured")) setEmailFallback(true);
       setStatus("error");
       setError(
         submitError.message ||

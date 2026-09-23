@@ -4,6 +4,7 @@ import "./Apps.css";
 const OFFERINGS = [
   {
     id: "products",
+    path: "/apps/contacts",
     category: "Products",
     title: "Relay",
     description:
@@ -101,6 +102,7 @@ export default function Apps() {
             <img
               src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=82"
               alt="A team planning work around a table"
+              fetchPriority="high"
             />
           </div>
         </header>
@@ -164,7 +166,7 @@ function AppCard({ app, index }) {
   const inner = (
     <div className={`app-card animate-fadeUp ${delay}`}>
       <div className="app-card__image">
-        <img src={app.image} alt="" />
+            <img src={app.image} alt="" loading="lazy" decoding="async" />
       </div>
       <div className="app-card__icon-wrap" style={{ "--app-color": app.color }}>
         <span className="app-card__icon">{app.icon}</span>
@@ -186,5 +188,10 @@ function AppCard({ app, index }) {
     </div>
   );
 
-  return inner;
+  return app.path ? (
+    <Link to={app.path} className="app-card__link" aria-label={`Explore ${app.title}`}>
+      {inner}
+      <span className="app-card__explore">Explore Relay <span aria-hidden="true">↗</span></span>
+    </Link>
+  ) : inner;
 }

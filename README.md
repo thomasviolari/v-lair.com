@@ -26,7 +26,7 @@ npm run preview    # preview the build locally
 
 Copy `apps/api/.env.example` to `apps/api/.env` for local development. Set `RESEND_API_KEY` to enable email sending. In production, also set `API_ACCESS_TOKEN` and `WEB_ORIGINS`; contact and email routes fail closed when the production access token is missing.
 
-The frontend API base URL can be configured with `VITE_API_URL`.
+Set `VITE_API_URL` to the deployed API origin (for example, `https://api.example.com`) when building the frontend. Local development defaults to `http://localhost:3001`; production builds never send requests to a visitor's localhost. The API is deployed separately from the static Vite site.
 
 ### Deploy to Vercel
 

@@ -18,13 +18,13 @@ export default function Home() {
               </span>
             </h1>
             <p className="hero__subtitle animate-fadeUp delay-3">
-              We combine practical software delivery with hands-on project
-              management for public-sector teams, European initiatives, growing
-              organisations, and ambitious projects that need to move forward.
+              We help public-sector teams, European initiatives, and growing
+              organisations turn complex work into useful digital services and
+              clear, manageable delivery plans.
             </p>
             <div className="hero__cta animate-fadeUp delay-4">
               <Link to="/apps" className="btn btn--primary">
-                See our capabilities
+                Explore our services
                 <svg
                   width="14"
                   height="14"
@@ -62,6 +62,7 @@ export default function Home() {
               <img
                 src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=82"
                 alt="A team reviewing project work together"
+                fetchPriority="high"
               />
             </div>
             <div className="hero__signal-lines">
@@ -133,11 +134,12 @@ export default function Home() {
             muted
             loop
             playsInline
-            poster="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=82"
+            preload="none"
+            poster="https://images.pexels.com/videos/8632590/pexels-photo-8632590.jpeg?auto=compress&dpr=1&h=750&w=1260"
             aria-hidden="true"
           >
             <source
-              src="https://videos.pexels.com/video-files/7593578/7593578-hd_1920_1080_25fps.mp4"
+              src="https://videos.pexels.com/video-files/8632590/8632590-hd_1920_1080_25fps.mp4"
               type="video/mp4"
             />
           </video>

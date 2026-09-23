@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
+import { apiUrl } from '../../../../lib/api.js'
 
-const RESEND_API = 'http://localhost:3001/api/email/send'
 
 export default function ComposeWidget({ contact, data, onChange }) {
   const [sending, setSending] = useState(false)
@@ -17,7 +17,7 @@ export default function ComposeWidget({ contact, data, onChange }) {
     setSending(true)
     setError(null)
     try {
-      const res = await fetch(RESEND_API, {
+      const res = await fetch(apiUrl('email/send'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

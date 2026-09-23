@@ -31,6 +31,7 @@ export default function Navbar({ theme, onToggleTheme }) {
         </Link>
 
         <div
+          id="primary-navigation"
           className={`navbar__links ${menuOpen ? "navbar__links--open" : ""}`}
         >
           {links.map(({ to, label, mobileOnly }) => (
@@ -112,6 +113,9 @@ export default function Navbar({ theme, onToggleTheme }) {
             className="navbar__hamburger"
             onClick={() => setMenuOpen((o) => !o)}
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            aria-controls="primary-navigation"
+            type="button"
           >
             <span className={menuOpen ? "open" : ""}></span>
             <span className={menuOpen ? "open" : ""}></span>

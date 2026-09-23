@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { apiUrl } from "../../../../lib/api.js";
 
-const API = `${import.meta.env.VITE_API_URL || "http://localhost:3001"}/api/email`;
 
 const DEFAULT_TEMPLATES = [
   {
@@ -49,7 +49,7 @@ export default function TemplatesWidget({
     try {
       await Promise.all(
         contacts.map((contact) =>
-          fetch(`${API}/send`, {
+          fetch(apiUrl("email/send"), {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
