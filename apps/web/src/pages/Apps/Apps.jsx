@@ -85,7 +85,8 @@ export default function Apps() {
           <div className="apps-intro__copy">
             <p className="page-header__eyebrow">Capabilities & products</p>
             <h1 className="page-header__title">
-              Delivery for public-facing work, digital services, and complex teams.
+              Delivery for public-facing work, digital services, and complex
+              teams.
             </h1>
             <p className="page-header__subtitle">
               We bring product thinking, software delivery, and project
@@ -166,7 +167,7 @@ function AppCard({ app, index }) {
   const inner = (
     <div className={`app-card animate-fadeUp ${delay}`}>
       <div className="app-card__image">
-            <img src={app.image} alt="" loading="lazy" decoding="async" />
+        <img src={app.image} alt="" loading="lazy" decoding="async" />
       </div>
       <div className="app-card__icon-wrap" style={{ "--app-color": app.color }}>
         <span className="app-card__icon">{app.icon}</span>
@@ -189,9 +190,17 @@ function AppCard({ app, index }) {
   );
 
   return app.path ? (
-    <Link to={app.path} className="app-card__link" aria-label={`Explore ${app.title}`}>
+    <Link
+      to={app.path}
+      className="app-card__link"
+      aria-label={`Explore ${app.title}`}
+    >
       {inner}
-      <span className="app-card__explore">Explore Relay <span aria-hidden="true">↗</span></span>
+      <span className="app-card__explore">
+        Explore Relay <span aria-hidden="true">↗</span>
+      </span>
     </Link>
-  ) : inner;
+  ) : (
+    inner
+  );
 }

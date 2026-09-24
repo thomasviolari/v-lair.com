@@ -48,7 +48,9 @@ export default function Home() {
           >
             <div className="hero__signal-top">
               <span>PROJECT DELIVERY</span>
-              <span className="hero__signal-status"><i /> Ready to partner</span>
+              <span className="hero__signal-status">
+                <i /> Ready to partner
+              </span>
             </div>
             <div className="hero__signal-number">03</div>
             <p className="hero__signal-heading">
@@ -64,11 +66,22 @@ export default function Home() {
               />
             </div>
             <div className="hero__signal-lines">
-              <div><span>Strategy &amp; planning</span><b>01</b></div>
-              <div><span>Digital delivery</span><b>02</b></div>
-              <div><span>Coordination &amp; reporting</span><b>03</b></div>
+              <div>
+                <span>Strategy &amp; planning</span>
+                <b>01</b>
+              </div>
+              <div>
+                <span>Digital delivery</span>
+                <b>02</b>
+              </div>
+              <div>
+                <span>Coordination &amp; reporting</span>
+                <b>03</b>
+              </div>
             </div>
-            <div className="hero__signal-foot">PUBLIC SECTOR / EUROPE / REMOTE</div>
+            <div className="hero__signal-foot">
+              PUBLIC SECTOR / EUROPE / REMOTE
+            </div>
           </aside>
         </div>
       </section>
