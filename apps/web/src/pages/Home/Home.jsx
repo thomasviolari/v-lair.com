@@ -8,7 +8,7 @@ export default function Home() {
         <div className="container hero__layout">
           <div className="hero__content">
             <p className="hero__eyebrow animate-fadeUp delay-1">
-              V-Lair / Cyprus-based technology startup
+              Cyprus-based technology & delivery partner
             </p>
             <h1 className="hero__title animate-fadeUp delay-2">
               A technology partner
@@ -42,15 +42,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div
+          <aside
             className="hero__signal animate-scaleIn delay-3"
             aria-label="Project delivery overview"
           >
             <div className="hero__signal-top">
               <span>PROJECT DELIVERY</span>
-              <span className="hero__signal-status">
-                <i /> Ready to partner
-              </span>
+              <span className="hero__signal-status"><i /> Ready to partner</span>
             </div>
             <div className="hero__signal-number">03</div>
             <p className="hero__signal-heading">
@@ -66,23 +64,12 @@ export default function Home() {
               />
             </div>
             <div className="hero__signal-lines">
-              <div>
-                <span>Strategy & planning</span>
-                <b>01</b>
-              </div>
-              <div>
-                <span>Digital delivery</span>
-                <b>02</b>
-              </div>
-              <div>
-                <span>Coordination & reporting</span>
-                <b>03</b>
-              </div>
+              <div><span>Strategy &amp; planning</span><b>01</b></div>
+              <div><span>Digital delivery</span><b>02</b></div>
+              <div><span>Coordination &amp; reporting</span><b>03</b></div>
             </div>
-            <div className="hero__signal-foot">
-              PUBLIC SECTOR / EUROPE / REMOTE
-            </div>
-          </div>
+            <div className="hero__signal-foot">PUBLIC SECTOR / EUROPE / REMOTE</div>
+          </aside>
         </div>
       </section>
 
@@ -201,9 +188,6 @@ export default function Home() {
           Start a conversation <span>→</span>
         </Link>
       </section>
-      <div className="scroll-hint animate-fadeIn delay-6">
-        <div className="scroll-hint__dot" />
-      </div>
     </main>
   );
 }

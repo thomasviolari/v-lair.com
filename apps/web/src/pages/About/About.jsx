@@ -68,14 +68,14 @@ export default function About() {
               ))}
             </div>
           </div>
-          <div className="bio__image">
+          <figure className="bio__image">
             <img
               src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=82"
               alt="A team collaborating in a bright workspace"
               loading="lazy"
               decoding="async"
             />
-          </div>
+          </figure>
         </section>
 
         {/* ── Divider ── */}
@@ -148,8 +148,8 @@ export default function About() {
 
         <div className="about-image-band animate-fadeUp delay-3">
           <img
-            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=82"
-            alt="A calm, modern workspace"
+            src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=1600&q=85"
+            alt="Software developers working together at their computers"
             loading="lazy"
             decoding="async"
           />

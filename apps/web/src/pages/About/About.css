@@ -12,11 +12,13 @@
 }
 
 .bio__image {
-  flex: 0 0 260px;
-  height: 300px;
+  flex: 0 0 340px;
+  height: 400px;
   overflow: hidden;
-  border-radius: var(--radius);
-  box-shadow: 12px 12px 0 var(--accent);
+  margin: 0 10px 10px 0;
+  border-radius: 16px;
+  background: var(--bg-card);
+  box-shadow: 10px 10px 0 var(--accent);
 }
 
 .bio__image img {
@@ -24,8 +26,12 @@
   height: 100%;
   display: block;
   object-fit: cover;
-  filter: saturate(0.78);
+  object-position: center 42%;
+  filter: saturate(0.86);
+  transition: transform 700ms cubic-bezier(0.2, 0.65, 0.3, 1);
 }
+
+.bio__image:hover img { transform: scale(1.035); }
 
 .bio__avatar {
   flex-shrink: 0;
@@ -154,10 +160,13 @@
 }
 
 .about-image-band {
-  height: 300px;
+  position: relative;
+  aspect-ratio: 2 / 1;
   overflow: hidden;
   margin-top: 72px;
-  border-radius: var(--radius);
+  border-radius: 16px;
+  background: #25352f;
+  box-shadow: 10px 10px 0 var(--accent);
 }
 
 .about-image-band img {
@@ -165,7 +174,8 @@
   height: 100%;
   display: block;
   object-fit: cover;
-  filter: saturate(0.68);
+  object-position: center 48%;
+  filter: saturate(0.82);
 }
 
 /* ── Skills ── */
@@ -313,12 +323,12 @@
 @media (max-width: 680px) {
   .about-page { padding-top: 104px; }
   .bio { flex-direction: column; gap: 24px; }
-  .bio__image { width: 100%; flex-basis: 240px; height: 240px; }
+  .bio__image { width: 100%; flex-basis: auto; height: clamp(300px, 82vw, 380px); }
   .skills-section__intro { align-items: flex-start; flex-direction: column; gap: 18px; }
   .skills-grid { grid-template-columns: 1fr; gap: 24px; }
   .europe-section { grid-template-columns: 1fr; gap: 20px; }
   .contact-card { grid-template-columns: 1fr; }
-  .about-image-band { height: 220px; margin-top: 48px; }
+  .about-image-band { aspect-ratio: 4 / 3; margin: 48px 8px 8px 0; }
 }
 
 /* About.css */
