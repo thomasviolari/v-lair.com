@@ -1,7 +1,6 @@
 import "./About.css";
 
 const SOCIALS = [
-  { label: "GitHub", icon: "⌥", href: "https://github.com/thomasviolari" },
   { label: "Email", icon: "✉", href: "mailto:thomasviolari@gmail.com" },
 ];
 
