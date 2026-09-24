@@ -248,6 +248,10 @@
   gap: 18px;
 }
 
+@media (max-width: 900px) {
+  .home .proof__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
 .proof-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -383,6 +387,11 @@
   .project-fit__item { grid-template-columns: 36px 1fr; gap: 12px; }
   .project-fit__item h3, .project-fit__item p { grid-column: 2; }
   .home > .proof.container { padding: 26px 20px 32px; }
+  .proof__grid { grid-template-columns: 1fr; gap: 14px; }
+  .proof-card { min-height: 0; padding: 22px; }
+  .proof-card__number { margin-bottom: 14px; }
+  .proof-card h3 { font-size: 19px; line-height: 1.25; }
+  .proof-card p { font-size: 15px; line-height: 1.55; }
   .home > .home-story.container { grid-template-columns: 1fr; gap: 36px; padding: 0 20px 56px; }
   .home-story__media { min-height: 260px; box-shadow: 8px 8px 0 var(--accent); }
   .features__grid { grid-template-columns: 1fr; }
