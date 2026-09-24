@@ -8,7 +8,7 @@ export default function Home() {
         <div className="container hero__layout">
           <div className="hero__content">
             <p className="hero__eyebrow animate-fadeUp delay-1">
-              Cyprus-based technology & delivery partner
+              Cyprus-based product & delivery partner
             </p>
             <h1 className="hero__title animate-fadeUp delay-2">
               A technology partner
@@ -19,8 +19,8 @@ export default function Home() {
             </h1>
             <p className="hero__subtitle animate-fadeUp delay-3">
               We help public-sector teams, European initiatives, and growing
-              organisations turn complex work into useful digital services and
-              clear, manageable delivery plans.
+              organisations turn complex work into usable services, clear plans,
+              and reliable delivery momentum.
             </p>
             <div className="hero__cta animate-fadeUp delay-4">
               <Link to="/apps" className="btn btn--primary">
@@ -114,6 +114,35 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="proof container animate-fadeUp delay-5">
+        <div className="section-intro">
+          <p className="section-intro__eyebrow">Selected work patterns</p>
+          <h2>Delivery shaped by real constraints.</h2>
+        </div>
+        <div className="proof__grid">
+          {[
+            {
+              title: "Public service workflows",
+              text: "Digital systems designed to simplify complex processes and make operations clearer for teams and users.",
+            },
+            {
+              title: "European project coordination",
+              text: "Structured planning, tracking, and reporting that keep partners aligned and progress visible across stakeholders.",
+            },
+            {
+              title: "Product and MVP validation",
+              text: "Fast prototypes and focused delivery to test the idea, map the user need, and drive better decisions early.",
+            },
+          ].map(({ title, text }) => (
+            <article key={title} className="proof-card">
+              <span className="proof-card__number">↗</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="home-story container animate-fadeUp delay-5">
         <div className="home-story__media">
           <video
@@ -148,11 +177,7 @@ export default function Home() {
       <section className="features container animate-fadeUp delay-5">
         <div className="section-intro">
           <p className="section-intro__eyebrow">Our approach</p>
-          <h2>
-            Useful outcomes.
-            <br />
-            <span>Built together.</span>
-          </h2>
+          <h2>Useful outcomes, built together.</h2>
         </div>
         <div className="features__grid">
           {[

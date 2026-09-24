@@ -85,12 +85,12 @@ export default function Apps() {
           <div className="apps-intro__copy">
             <p className="page-header__eyebrow">Capabilities & products</p>
             <h1 className="page-header__title">
-              Technology that moves projects forward.
+              Delivery for public-facing work, digital services, and complex teams.
             </h1>
             <p className="page-header__subtitle">
-              We combine product thinking, software delivery, and project
-              management for teams doing work that needs to land in the real
-              world.
+              We bring product thinking, software delivery, and project
+              management to organisations that need practical systems, clear
+              coordination, and measurable progress in the real world.
             </p>
             <div className="apps-intro__meta">
               <span>Based in Cyprus</span>

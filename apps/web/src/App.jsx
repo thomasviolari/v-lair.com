@@ -28,6 +28,7 @@ export default function App() {
     document.querySelector('meta[property="og:description"]')?.setAttribute("content", page.description);
     document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", page.title);
     document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", page.description);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [pathname]);
 
   return (
